@@ -13,21 +13,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button (click)="startCountdown()" *ngIf="!startGame" color="dark">Start game</ion-button>
+  <div class="start-container" *ngIf="!startGame">
+    <ion-button (click)="startCountdown()"  color="dark">Start game</ion-button>
+  </div>
 
   <div *ngIf="startGame" class="container">
-    <app-countdown *ngIf="startGame" (countDownOver)="startRunCountDown()" [start]="startGame"> </app-countdown>
+    <app-countdown *ngIf="!startRun" (countDownOver)="startRunCountDown()" [start]="startGame"> </app-countdown>
+
+    <app-score-board [playerScore]="playerRuns"> </app-score-board>
 
     <app-run-countdown *ngIf="startRun" [start]="startRun"> </app-run-countdown>
 
-    <app-score-board [playerScore]="playerRuns"> </app-score-board>
-  
-    <b> Virtual player selected : </b>
-  
-    {{ virtualPlayerScaledNumber }}
-  
-    <b> you selected : {{ mySelectedNumber }} </b>
-  
     <div class="runs-container">
       <div class="runs-item" (click)="setYourRuns(1)">
         1
@@ -48,7 +44,10 @@
         6
       </div>
     </div>
+
+    <app-selected-number [virtualPlayerScaledNumber]="virtualPlayerScaledNumber" [mySelectedNumber]="mySelectedNumber">
+    </app-selected-number>
+
   </div>
 
-  
 </ion-content>

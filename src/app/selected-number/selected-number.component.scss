@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.item {
+  width: 25%;
+  background-color: #092635;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 5px;
+}
