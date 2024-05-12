@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { CountdownComponent } from '../countdown/countdown.component';
 import { RunCountdownComponent } from '../run-countdown/run-countdown.component';
+import { ScoreBoardComponent } from '../score-board/score-board.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { RunCountdownComponent } from '../run-countdown/run-countdown.component'
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, CountdownComponent, RunCountdownComponent]
+  declarations: [Tab1Page, CountdownComponent, RunCountdownComponent, ScoreBoardComponent]
 })
 export class Tab1PageModule {}

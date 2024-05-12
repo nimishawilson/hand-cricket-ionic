@@ -1,16 +1,21 @@
 .runs-container {
-    background-color: paleturquoise;
+  background-color: #5c8374;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 1rem;
+  height: 30vh;
+  padding: 5px;
+  border-radius: 5px;
+  .runs-item {
+    font-size: 2rem;
+    color: #ffffff;
+    background-color: #1b4242;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 1rem;
-    height: 30vh;
-    .runs-item {
-        background-color: yellow;
-        width: 30%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
 }

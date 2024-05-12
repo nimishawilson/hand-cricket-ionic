@@ -13,36 +13,42 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-button (click)="startCountdown()" color="dark">Start game</ion-button>
+  <ion-button (click)="startCountdown()" *ngIf="!startGame" color="dark">Start game</ion-button>
 
-  <app-countdown *ngIf="startGame" (countDownOver)="startRunCountDown()" [start]="startGame"> </app-countdown>
+  <div *ngIf="startGame" class="container">
+    <app-countdown *ngIf="startGame" (countDownOver)="startRunCountDown()" [start]="startGame"> </app-countdown>
 
-  <app-run-countdown *ngIf="startRun" [start]="startRun"> </app-run-countdown>
+    <app-run-countdown *ngIf="startRun" [start]="startRun"> </app-run-countdown>
 
-  <b> Virtual player selected : </b>
-
-  {{ virtualPlayerScaledNumber }}
-
-  <b> you selected : {{ mySelectedNumber }} </b>
-
-  <div class="runs-container">
-    <div class="runs-item" (click)="setYourRuns(1)">
-      1
-    </div>
-    <div class="runs-item" (click)="setYourRuns(2)">
-      2
-    </div>
-    <div class="runs-item" (click)="setYourRuns(3)">
-      3
-    </div>
-    <div class="runs-item" (click)="setYourRuns(4)">
-      4
-    </div>
-    <div class="runs-item" (click)="setYourRuns(5)">
-      5
-    </div>
-    <div class="runs-item" (click)="setYourRuns(6)">
-      6
+    <app-score-board [playerScore]="playerRuns"> </app-score-board>
+  
+    <b> Virtual player selected : </b>
+  
+    {{ virtualPlayerScaledNumber }}
+  
+    <b> you selected : {{ mySelectedNumber }} </b>
+  
+    <div class="runs-container">
+      <div class="runs-item" (click)="setYourRuns(1)">
+        1
+      </div>
+      <div class="runs-item" (click)="setYourRuns(2)">
+        2
+      </div>
+      <div class="runs-item" (click)="setYourRuns(3)">
+        3
+      </div>
+      <div class="runs-item" (click)="setYourRuns(4)">
+        4
+      </div>
+      <div class="runs-item" (click)="setYourRuns(5)">
+        5
+      </div>
+      <div class="runs-item" (click)="setYourRuns(6)">
+        6
+      </div>
     </div>
   </div>
+
+  
 </ion-content>

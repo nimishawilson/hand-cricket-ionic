@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="player-score">
+    <h3>  Your score </h3>
+    <span class="rounded-span" *ngFor="let score of playerScore"> {{ score }} </span>
+    <span class="total"> Total: {{ sumArray(playerScore) }} </span>
+  </div>
+  <div class="virtual-player-score">
+    <h3>  Opponent score  </h3>
+    <span class="rounded-span" *ngFor="let score of opponentPlayerScore"> {{ score }} </span>
+    <span class="total"> Total: {{ sumArray(opponentPlayerScore) }} </span>
+  </div>
+</div>
